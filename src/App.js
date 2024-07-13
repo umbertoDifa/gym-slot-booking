@@ -70,15 +70,15 @@ const GymSlotBooking = () => {
 
   const handleBooking = () => {
     if (!name.trim()) {
-      alert('Please enter your name before booking.');
+      alert('Inserisci il nome prima di prenotare');
       return;
     }
     if (!selectedDate) {
-      alert('Please select a date before booking.');
+      alert('Seleziona la data della prenotazione');
       return;
     }
     if (selectedSlot === null) {
-      alert('Please select a slot before booking.');
+      alert('Seleziona uno slot per la prenotazione');
       return;
     }
 
@@ -107,12 +107,12 @@ const GymSlotBooking = () => {
   const today = new Date().toISOString().split('T')[0];
 
   if (loading) {
-    return <div className="container mx-auto px-4 py-8 max-w-md">Loading...</div>;
+    return <div className="container mx-auto px-4 py-8 max-w-md">Caricamento...</div>;
   }
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-md">
-      <h1 className="text-2xl font-bold mb-4">Gym Slot Booking</h1>
+      <h1 className="text-2xl font-bold mb-4">Prenotazione Slot Palestra GP Jiujitsu</h1>
       
       <div className="mb-4">
         <input
@@ -125,8 +125,8 @@ const GymSlotBooking = () => {
       </div>
 
       <div className="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4 mb-4" role="alert">
-        <p className="font-bold">Available Slots: {getAvailableSlots(selectedDate)} out of 8</p>
-        <p>Book your slot for {new Date(selectedDate).toDateString()}!</p>
+        <p className="font-bold">Slot disponibili: {getAvailableSlots(selectedDate)} su 8</p>
+        <p>Prenota il tuo slot per il {new Date(selectedDate).toLocaleDateString()}!</p>
       </div>
 
       <div className="mb-4">
@@ -134,7 +134,7 @@ const GymSlotBooking = () => {
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="Enter your name"
+          placeholder="Inserisci il tuo nome"
           className="w-full p-2 border rounded mb-2"
         />
         <button
@@ -142,14 +142,14 @@ const GymSlotBooking = () => {
           className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 disabled:bg-gray-300"
           disabled={!name.trim() || selectedSlot === null || getAvailableSlots(selectedDate) === 0}
         >
-          Book Selected Slot
+          Prenota Slot Selezionato
         </button>
       </div>
 
       {getAvailableSlots(selectedDate) === 0 && (
         <div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mb-4" role="alert">
-          <p className="font-bold">All slots are booked for this date.</p>
-          <p>Please select another date or cancel a booking if it's yours.</p>
+          <p className="font-bold">Tutti gli slot sono prenotati per questa data.</p>
+          <p>Seleziona un'altra data o cancella una prenotazione se è la tua.</p>
         </div>
       )}
 
@@ -196,7 +196,7 @@ const SlotItem = ({ time, index, selectedDate, bookings, selectedSlot, handleSlo
     >
       <div>
         <p className="font-semibold">{time}</p>
-        {slot && <p className="text-sm text-gray-600">Booked by: {slot.name}</p>}
+        {slot && <p className="text-sm text-gray-600">Prenotato da: {slot.name}</p>}
       </div>
       {slot ? (
         <button
