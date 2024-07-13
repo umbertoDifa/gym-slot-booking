@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/gym-slot-booking/static/css/main.db38ada5.css",
+    "main.js": "/gym-slot-booking/static/js/main.63fbccb5.js",
+    "static/js/453.2732965b.chunk.js": "/gym-slot-booking/static/js/453.2732965b.chunk.js",
+    "index.html": "/gym-slot-booking/index.html",
+    "main.db38ada5.css.map": "/gym-slot-booking/static/css/main.db38ada5.css.map",
+    "main.63fbccb5.js.map": "/gym-slot-booking/static/js/main.63fbccb5.js.map",
+    "453.2732965b.chunk.js.map": "/gym-slot-booking/static/js/453.2732965b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.db38ada5.css",
+    "static/js/main.63fbccb5.js"
+  ]
+}
